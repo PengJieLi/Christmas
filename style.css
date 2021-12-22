@@ -1,53 +1,78 @@
-@font-face {
-    font-family: 'mountains_of_christmasregular';
-    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/mountainsofchristmas-webfont.woff2') format('woff2'),
-         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/mountainsofchristmas-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-body {
-  background-color:#151522;
-  overflow: hidden;
-  text-align:center;
-}
-
-body,
-html {
-  height: 100%;
-  width: 100%;
+* {
   margin: 0;
   padding: 0;
 }
 
-
-svg{
-  width:100%;
-  height:100%;
-  visibility:hidden;
- 
+.wrapper {
+  background-color: #e83655;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
-.sparkle{
-  /* mix-blend-mode:luminosity */
+.animation {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1000px;
 }
 
-.merryText, .merryTextBg, .fromChrisText{
- font-family:'mountains_of_christmasregular' ;
-  fill:#fffcf9;
-  text-anchor:middle;
-  font-size:3.64em;
-}
-.merryTextBg{
-
-  stroke:#C89568;
-  fill:transparent;
-  stroke-width:3;
-  text-anchor:middle;
-  font-size:3.64em;
+.animation_wrap {
+  width: 200%;
+  height: 0;
+  padding-bottom: 120%;
+  position: relative;
+  overflow: hidden;
+  margin-left: -50%;
 }
 
-.fromChrisText{
-	  font-size:1.64em;  
-	fill:#C89568;
+@media screen and (min-aspect-ratio: 5/8) {
+  .animation_wrap {
+    width: 150%;
+    padding-bottom: 90%;
+    margin-left: -25%;
+  }
+}
+@media screen and (min-aspect-ratio: 3/4) {
+  .animation_wrap {
+    width: 100%;
+    padding-bottom: 60%;
+    margin-left: 0;
+  }
+}
+.animation_wrap svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.bottom_snow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 7.4%;
+}
+
+@media screen and (min-aspect-ratio: 4/3) {
+  .bottom_snow {
+    display: none;
+  }
+}
+.bottom_snow svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.snow {
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
